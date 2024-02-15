@@ -1,0 +1,39 @@
+@import './../scss/vars';
+.navbar {
+    background-color: var(--color-main);
+    display: grid;
+    grid-template-columns: 30% 30% 20% 20% ;
+    height: 75px;
+    align-items: center;
+    
+}
+.search-all {
+  display: flex;
+}
+.search {
+    border-radius: 15px;
+    border: var(--color-main) solid;
+    height: 30px;
+    padding-left: 10px;
+    
+}
+
+.main-button {
+    display: flex;
+    flex-direction: column;
+}
+.toggle-dark {
+    height: 20px;
+    width: 50px;
+    border-radius: 15px;
+    border: solid var(--color-main);
+    cursor: pointer;
+    background-color: white;
+}
+.dark {
+    background-color: var(--color-main-dark);
+    color: white;
+    .logo-main, .logo-search, .logo-profile {
+        color: white;
+       }
+}
