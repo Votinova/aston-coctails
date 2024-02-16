@@ -7,15 +7,15 @@ import { ThemeContext } from '../context/contex';
 export const Navbar = () => {
   const {dark, toggleDark} = useContext(ThemeContext)
   return (
-    <div className={dark? 'navbar' : 'navbar dark'}>
+    <div className={dark? 'navbar dark' : 'navbar'}>
       <div className='main-button'>
       <Link to='/'> <span className='logo-main'>
         <BeerBottle size={32} /></span> </Link>
-        <button className={dark? 'toggle-dark' : 'toggle-dark dark'} onClick={toggleDark}>dark</button>
+        <button className={dark? 'toggle-dark dark' : 'toggle-dark'} onClick={toggleDark}>dark</button>
       </div>
       <Link to='/search'>
         <div className='search-all'>
-        <input title='search' className={dark? 'search' : 'search dark'}>
+        <input title='search' className={dark? 'search dark' : 'search'}>
         </input>
         <span className='logo-search'><MagnifyingGlass size={32} /></span>
         </div>
