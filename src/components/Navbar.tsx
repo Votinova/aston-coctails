@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './Navbar.scss'
 import { MagnifyingGlass, UserCircle, BeerBottle } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../context/contex';
+import { ThemeContext } from '../context/context';
 
 export const Navbar = () => {
   const {dark, toggleDark} = useContext(ThemeContext)

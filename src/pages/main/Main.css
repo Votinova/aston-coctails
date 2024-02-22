@@ -1,21 +1,25 @@
-
+@import './../../scss/_vars.scss';
 .drinks-card {
     margin: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px; 
+    .link {
+        color: var(--color-main);
+    }
+    
 }
 .drink-card {
     width: 200px;
     height: 250px;
     border-radius: 15px;
-    border: 2px solid #828286;
+    border: 2px solid var(--color-main);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #828286;
     gap: 5px;
+   
 }
 .drink-card img {
     width: 90px;

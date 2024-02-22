@@ -9,7 +9,6 @@ export const ThemeContextProvider: React.FC<{children: React.ReactNode}> = ({chi
     const [dark, setDark] = useState(false);
     const toggleDark = () => {
         setDark(!dark);
-        console.log(dark)
     }
   return (
     <ThemeContext.Provider

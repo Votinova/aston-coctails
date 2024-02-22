@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { IDrink} from "../types/typeContext";
 
 export interface Drinks {
-    drinks: IDrink[]
+    drinks: IDrink[] 
 }
 export const useCoctailsServise = (url: string) => {
-    const [result, setResult] = useState <Drinks>();
+    const [result, setResult] = useState<Drinks>();
    
     useEffect(()=> {
 if (url) {

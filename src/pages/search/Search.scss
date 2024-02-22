@@ -1,0 +1,36 @@
+.search-menu {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 40px;
+    margin: 30px;
+
+    button {
+        height: 40px;
+        width: 150px;
+        border-radius: 15px;
+        border: 2px solid var(--color-main);
+        background-color: white;
+        cursor: pointer;
+    }
+    button:active {
+        background-color: var(--color-main);
+        color: whitesmoke;
+    }
+
+  
+    input {
+        width: 250px;
+        height: 40px;
+        border-radius: 15px;
+        border: 2px solid var(--color-main);
+    }
+    .button-start {
+        background-color:  var(--color-main);
+        cursor: pointer;
+    }
+
+}
+
+.active {
+    color: var(--color-main);
+}

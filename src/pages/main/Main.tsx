@@ -6,7 +6,6 @@ import'./Main.css'
 
 export const Main = () => {
   const state = useCoctailsServise('www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail');
-  console.log(state);
   return (
    <div className='drinks-card'>
     {state && state.drinks.map((drink: IDrink) => {
