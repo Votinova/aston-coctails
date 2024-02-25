@@ -5,7 +5,6 @@ import { contextElement } from '../../context/contextElement'
 
 export const Coctail = (props: {data: IDrink}) => {
   const {choiceId} = useContext(contextElement);
-//  const id = props.data.idDrink?? 0;
  function clickElement () {
   if (choiceId) {
     choiceId(props.data.idDrink)
