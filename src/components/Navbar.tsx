@@ -11,7 +11,7 @@ export const Navbar = () => {
       <div className='main-button'>
       <Link to='/'> <span className='logo-main'>
         <BeerBottle size={32} /></span> </Link>
-        <button className={dark? 'toggle-dark dark' : 'toggle-dark'} onClick={toggleDark}>dark</button>
+        <button className={dark? 'toggle-dark dark' : 'toggle-dark'} onClick={toggleDark}>{dark? <span>light</span> : <span>dark</span>}</button>
       </div>
       <Link to='/search'>
         <div className='search-all'>
@@ -23,7 +23,9 @@ export const Navbar = () => {
       <Link to='/profile'>
         <span className='logo-profile'><UserCircle size={32} /></span>
       </Link>
+      <Link  to='/sign'>
         <span className='log-in'>Sign in</span> 
+      </Link> 
     </div>
   )
 }

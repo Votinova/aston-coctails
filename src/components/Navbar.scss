@@ -5,6 +5,9 @@
     grid-template-columns: 30% 30% 20% 20% ;
     height: 75px;
     align-items: center;
+    a {
+        color: black;
+    }
     
 }
 .search-all {
@@ -34,6 +37,9 @@
     background-color: var(--color-main-dark);
     color: white;
     .logo-main, .logo-search, .logo-profile {
+        color: white;
+       }
+       a {
         color: white;
        }
 }

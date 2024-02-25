@@ -35,3 +35,11 @@ export interface IElement {
     strIngredient16: string | null;
     strInstructions: string;
 }
+export interface myState {
+    user: {
+        email: string | null
+        password: string | null
+        id: number | null,
+        token: number | null
+    }
+}
