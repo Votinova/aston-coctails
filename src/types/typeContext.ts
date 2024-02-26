@@ -39,7 +39,7 @@ export interface myState {
     user: {
         email: string | null
         password: string | null
-        id: number | null,
+        id: string| null,
         token: number | null
     }
 }

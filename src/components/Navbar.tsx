@@ -3,8 +3,17 @@ import './Navbar.scss'
 import { MagnifyingGlass, UserCircle, BeerBottle } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../context/context';
+import { useAuth } from '../hooks/useAuth';
+import { useDispatch } from 'react-redux';
+import { removeUser } from '../store/slices/userSlice';
+import { store } from '../store/store';
 
 export const Navbar = () => {
+  const isAuth = useAuth();
+  const dispatch = useDispatch();
+  const logOut = () => {
+    dispatch(removeUser());
+  }
   const {dark, toggleDark} = useContext(ThemeContext)
   return (
     <div className={dark? 'navbar dark' : 'navbar'}>
@@ -24,7 +33,7 @@ export const Navbar = () => {
         <span className='logo-profile'><UserCircle size={32} /></span>
       </Link>
       <Link  to='/sign'>
-        <span className='log-in'>Sign in</span> 
+        {isAuth? <span onClick={() => logOut()}>log out</span>:<span className='log-in'>Sign in</span> }
       </Link> 
     </div>
   )
