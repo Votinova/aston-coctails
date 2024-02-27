@@ -7,29 +7,22 @@ import { Search } from './pages/search/Search';
 import { Profile } from './pages/Profile/Profile';
 import { ThemeContextProvider } from './context/context';
 import { Element } from './pages/cart/Element';
-import { Sign } from './pages/form/Sign';
-import { FormLogIn } from './pages/form/Auto/FormLogIn';
-import { FormSignUp } from './pages/form/Auto/FormSignUp';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
+import { ElementProvider } from './context/contextElement';
 
 function App() {
   return (
    <div>
-    <Provider store={store}>
-        <ThemeContextProvider>
-          <Navbar />
-            <Routes>
-              <Route path='/' element={<Main />} />
-              <Route path='/search' element={<Search />} />
-              <Route path='/profile' element={<Profile />} />
-              <Route path='/element' element={<Element />} />
-              <Route path='/sign' element={<Sign />} />
-              <Route path='/formsignup' element={<FormSignUp />} />
-              <Route path='/formlogin' element={<FormLogIn />} />    
-            </Routes>
-        </ThemeContextProvider>
-    </Provider>
+    <ElementProvider>
+    <ThemeContextProvider>
+    <Navbar />
+    <Routes>
+      <Route path='/' element={<Main />} />
+      <Route path='/search' element={<Search />} />
+      <Route path='/profile' element={<Profile />} />
+      <Route path='/element' element={<Element />} />
+    </Routes>
+    </ThemeContextProvider>
+    </ElementProvider>
    </div>
   );
 }

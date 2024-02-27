@@ -1,17 +1,15 @@
 import React, { useContext } from 'react'
 import { IDrink } from '../../types/typeContext'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../../hooks/useAuth'
-import { useDispatch } from 'react-redux'
-import { setElement } from '../../store/slices/elementSlice'
+import { contextElement } from '../../context/contextElement'
 
 export const Coctail = (props: {data: IDrink}) => {
-const dispatch = useDispatch();
-const isAuth = useAuth();
+  const {choiceId} = useContext(contextElement);
  function clickElement () {
-  dispatch(setElement({
-    id: props.data.idDrink
-  }))
+  if (choiceId) {
+    choiceId(props.data.idDrink)
+  }
+  console.log(props.data.idDrink)
  }
   return (
     <div className='drink-card'>
@@ -21,7 +19,6 @@ const isAuth = useAuth();
               {props.data.strDrink}
           </h1>
         </Link>
-        {isAuth && <button>Like</button>}
     </div>
   )
 }

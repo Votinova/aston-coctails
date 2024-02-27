@@ -1,24 +1,42 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import'./Search.scss';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import {  useGetSearchQuery } from '../../store/servise/data';
-import { Loader } from '../../utilits/Loader/Loader';
+import { useCoctailsServise } from '../../hooks/useCoctailsServise';
 import { Coctail } from '../main/Coctail';
 import { IDrink } from '../../types/typeContext';
 export const Search = () => {
-  const search = useSelector((state: RootState) => state.search.search);
-  const {data, isError, isLoading} = useGetSearchQuery(search);
+  const [searchTitle, setSearchTitle] = useState(true);
+  const [searchIngridients, setSearchIngridient] = useState(false);
+  const [text, setText] = useState('');
+  function searchIngridientsStart ()  {
+    setSearchTitle(false);
+    setSearchIngridient(true);
+
+}
+  function searchTitleStart ()  {
+  setSearchTitle(true);
+  setSearchIngridient(false);
+
+}
+  function handleChange (e: React.ChangeEvent<HTMLInputElement>) {
+    setText(e.target.value);
+  }
   return (
-    <div>
-    {isLoading? <Loader / > 
-    :
-    <div className='drinks-card'>
-    {data && data.drinks.map((drink: IDrink) => {
-      return <Coctail key={drink.idDrink} data={drink} />
-    })}
-   </div>
-    }
-    </div>
+  <div className='search-menu'>
+    <button title='search-title' onClick={searchTitleStart} 
+    className={searchTitle? 'active' :''}>
+      Search by name
+    </button>
+    <button title='search-ingridients' onClick={searchIngridientsStart}
+    className={searchIngridients? 'active' : ''}>
+      Search by ingredient
+    </button>
+    <input title='search' placeholder={searchTitle? 'margarita' : 'vodka'}
+    onChange={handleChange}
+    >
+    </input>
+    <button title='search-start' className='button-start'>
+      Search
+    </button>
+  </div>
   )
 }
