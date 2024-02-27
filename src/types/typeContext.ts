@@ -2,10 +2,6 @@
     dark: boolean;
     toggleDark?: () => void
 }
-export interface IContextElement {
-    id: number;
-    choiceId?: (idElement: number) => void
-}
 
 export interface IDrink {
     idDrink: number;
@@ -34,4 +30,12 @@ export interface IElement {
     strIngredient15: string | null;
     strIngredient16: string | null;
     strInstructions: string;
+}
+export interface myState {
+    user: {
+        email: string | null
+        password: string | null
+        id: string| null,
+        token: number | null
+    }
 }
