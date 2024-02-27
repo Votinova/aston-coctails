@@ -10,9 +10,8 @@
     
 }
 .drink-card {
-    position: relative;
-    width: 300px;
-    height: 400px;
+    width: 200px;
+    height: 250px;
     border-radius: 15px;
     border: 2px solid var(--color-main);
     display: flex;
@@ -20,21 +19,7 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
-    button {
-        background-color: white;
-        position: absolute;
-        bottom: 50px;
-        width: 100px;
-        height: 30px;
-        border-radius: 15px;
-        border: 2px solid var(--color-main);
-        color: var(--color-main);
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: var(--color-main);
-        color: white;
-    }
+   
 }
 .drink-card img {
     width: 90px;
