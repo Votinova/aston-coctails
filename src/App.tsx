@@ -7,7 +7,6 @@ import { Search } from './pages/search/Search';
 import { Profile } from './pages/Profile/Profile';
 import { ThemeContextProvider } from './context/context';
 import { Element } from './pages/cart/Element';
-import { ElementProvider } from './context/contextElement';
 import { Sign } from './pages/form/Sign';
 import { FormLogIn } from './pages/form/Auto/FormLogIn';
 import { FormSignUp } from './pages/form/Auto/FormSignUp';
@@ -18,7 +17,6 @@ function App() {
   return (
    <div>
     <Provider store={store}>
-      <ElementProvider>
         <ThemeContextProvider>
           <Navbar />
             <Routes>
@@ -31,7 +29,6 @@ function App() {
               <Route path='/formlogin' element={<FormLogIn />} />    
             </Routes>
         </ThemeContextProvider>
-      </ElementProvider>
     </Provider>
    </div>
   );

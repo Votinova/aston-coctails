@@ -2,10 +2,6 @@
     dark: boolean;
     toggleDark?: () => void
 }
-export interface IContextElement {
-    id: number;
-    choiceId?: (idElement: number) => void
-}
 
 export interface IDrink {
     idDrink: number;

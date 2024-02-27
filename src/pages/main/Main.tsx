@@ -1,16 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Coctail } from './Coctail';
-import { useCoctailsServise } from '../../hooks/useCoctailsServise';
 import { IDrink } from '../../types/typeContext';
-import'./Main.css'
+import { useGetAllCoctailQuery } from '../../store/servise/data';
+import'./Main.scss'
+import { useDispatch } from 'react-redux';
+import { Loader } from '../../utilits/Loader/Loader';
 
 export const Main = () => {
-  const state = useCoctailsServise('www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail');
+const {data, isError, isLoading} = useGetAllCoctailQuery('');
   return (
-   <div className='drinks-card'>
-    {state && state.drinks.map((drink: IDrink) => {
+    <div>
+    {isLoading? <Loader / > 
+    :
+    <div className='drinks-card'>
+    {data && data.drinks.map((drink: IDrink) => {
       return <Coctail key={drink.idDrink} data={drink} />
     })}
    </div>
+    }
+    </div>
   )
 }

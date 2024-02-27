@@ -12,6 +12,11 @@
 }
 .search-all {
   display: flex;
+  button {
+    background-color: var(--color-main);
+    border: none;
+    cursor: pointer;
+  }
 }
 .search {
     border-radius: 15px;
@@ -27,7 +32,7 @@
 }
 .toggle-dark {
     height: 20px;
-    width: 50px;
+    width: 100px;
     border-radius: 15px;
     border: solid var(--color-main);
     cursor: pointer;
@@ -42,4 +47,8 @@
        a {
         color: white;
        }
+    .search-all button {
+        background-color:  var(--color-main-dark);
+        border: none;
+    }
 }
