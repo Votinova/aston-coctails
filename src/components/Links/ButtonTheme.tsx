@@ -4,7 +4,7 @@ import { useContext } from 'react';
 
 
 export const ButtonTheme = () => {
-    const {dark, toggleDark} = useContext(ThemeContext)
+    const {dark, toggleDark} = useContext(ThemeContext);
     return (
     <button 
     className={dark? 'toggle-dark dark' : 'toggle-dark'} 

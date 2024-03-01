@@ -1,7 +1,8 @@
-import React from 'react'
-
+import React from "react"
 export const Like = () => {
   return (
-    <div>like</div>
+  <div>
+    df
+  </div>
   )
 }

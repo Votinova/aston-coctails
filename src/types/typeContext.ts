@@ -2,7 +2,6 @@
     dark: boolean;
     toggleDark?: () => void
 }
-
 export interface IDrink {
     idDrink: number;
     strDrink: string;

@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from './slices/userSlice';
 import elementReducer from './slices/elementSlice'
-import searchReducer from './slices/searchSlise'
+import searchReducer from './slices/searchSlise';
 import { dataApi } from "./servise/data";
 import { setupListeners } from '@reduxjs/toolkit/query'
 

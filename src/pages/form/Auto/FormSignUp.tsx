@@ -3,10 +3,7 @@ import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import { setUser } from '../../../store/slices/userSlice';
-
-
-
+import { setUser } from '../../../store/slices/userSlice'
 
 export const FormSignUp = () => {
   const dispatch = useDispatch();
@@ -23,8 +20,6 @@ export const FormSignUp = () => {
     })
     .catch(console.error)
   }
-  
-
   const formik = useFormik({
     initialValues: {
       email: '',

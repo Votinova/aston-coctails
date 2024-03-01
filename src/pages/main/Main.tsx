@@ -8,6 +8,7 @@ import { Loader } from '../../utilits/Loader/Loader';
 
 export const Main = () => {
 const {data, isError, isLoading} = useGetAllCoctailQuery('');
+console.log(data)
   return (
     <div>
     {isLoading? <Loader / > 
