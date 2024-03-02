@@ -2,7 +2,6 @@
     dark: boolean;
     toggleDark?: () => void
 }
-
 export interface IDrink {
     idDrink: number;
     strDrink: string;
@@ -31,11 +30,16 @@ export interface IElement {
     strIngredient16: string | null;
     strInstructions: string;
 }
-export interface myState {
-    user: {
-        email: string | null
-        password: string | null
-        id: string| null,
-        token: number | null
-    }
+
+export interface IUser {
+    email: string;
+    uid: string,
+}
+export interface IForm {
+    email: string,
+    password: string
+}
+export type InitialStateUser = {
+    isAuth: boolean,
+    user: IUser | null
 }

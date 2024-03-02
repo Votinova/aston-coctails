@@ -3,7 +3,6 @@ import { Coctail } from './Coctail';
 import { IDrink } from '../../types/typeContext';
 import { useGetAllCoctailQuery } from '../../store/servise/data';
 import'./Main.scss'
-import { useDispatch } from 'react-redux';
 import { Loader } from '../../utilits/Loader/Loader';
 
 export const Main = () => {

@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {
-    email: '',
-    password: '',
-    id: ''
+import { InitialStateUser } from "../../types/typeContext";
+import { auth } from "../../firebaseConfig";
+
+const initialState: InitialStateUser = {
+    isAuth: auth ? true : false,
+    user: null,
 };
 
 const userSlice = createSlice({
@@ -10,17 +12,14 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         setUser(state, action) {
-            state.email = action.payload.email;
-            state.password = action.payload.password;
-            state.id = action.payload.id;
+            state.user = action.payload
         },
         removeUser(state) {
-            state.email = '';
-            state.password = '';
-            state.id = '';
+            state.user = null
         }
     }
 })
 
 export const {setUser, removeUser} = userSlice.actions;
+
 export default userSlice.reducer;

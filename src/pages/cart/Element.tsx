@@ -8,7 +8,7 @@ import { RootState } from '../../store/store';
 import { Loader } from '../../utilits/Loader/Loader';
 
 export const Element = () => {
-const id = useSelector((state: RootState) =>state.element.id);
+const id = useSelector((state: RootState) => state.element.id);
 const {data, isError, isLoading} = useGetElementQuery(id);
 
   return (
