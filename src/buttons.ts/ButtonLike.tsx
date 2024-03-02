@@ -1,13 +1,20 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { IDrink, myState } from '../types/typeContext'
+import { IDrink} from '../types/typeContext'
+import { LikeElement } from '../hooks/LikeElement'
+
+
 
 
 export const ButtonLike = (props: {data: IDrink}) => {
+  const {likeCoctail} = LikeElement(props.data.idDrink)
+
+const likeClick = () => {
+ likeCoctail(props.data)
+}
 
   return (
-    <button>
-      Like
+    <button onClick={likeClick}>
+      like
     </button>
   )
   }

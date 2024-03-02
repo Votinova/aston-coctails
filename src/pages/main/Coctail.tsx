@@ -6,8 +6,11 @@ import { useDispatch } from 'react-redux'
 import { setElement } from '../../store/slices/elementSlice'
 import { ButtonLike } from '../../buttons.ts/ButtonLike';
 
+
+
 export const Coctail = (props: {data: IDrink}) => {
 const dispatch = useDispatch();
+
 const isAuth = useAuth();
  function clickElement () {
   dispatch(setElement({
@@ -23,7 +26,7 @@ const isAuth = useAuth();
               {props.data.strDrink}
           </h1>
         </Link>
-        {isAuth && <ButtonLike data={props.data} />}
+        {isAuth &&  <ButtonLike data ={props.data}/>}
     </div>
   )
 }

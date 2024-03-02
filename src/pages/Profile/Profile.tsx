@@ -3,11 +3,13 @@ import { History } from './history/History';
 import { Like } from './like/Like';
 
 
+
 export const Profile = () => {
+
   return (
     <div>
-        <History />
-        <Like />
+          <Like />
+          <History />
     </div>
   )
 }
