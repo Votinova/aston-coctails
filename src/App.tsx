@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {BrowserRouter as  Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { Main } from './pages/main/Main';
@@ -12,6 +12,8 @@ import { FormLogIn } from './pages/form/Auto/FormLogIn';
 import { FormSignUp } from './pages/form/Auto/FormSignUp';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import { History } from './pages/Profile/history/History';
+import { Like } from './pages/Profile/like/Like';
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
               <Route path='/element' element={<Element />} />
               <Route path='/sign' element={<Sign />} />
               <Route path='/formsignup' element={<FormSignUp />} />
-              <Route path='/formlogin' element={<FormLogIn />} />    
+              <Route path='/formlogin' element={<FormLogIn />} />   
+              <Route path='/history' element={<History />} /> 
+              <Route path='/like' element={<Like />} /> 
             </Routes>
         </ThemeContextProvider>
     </Provider>

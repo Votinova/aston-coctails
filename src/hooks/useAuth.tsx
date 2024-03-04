@@ -1,7 +1,6 @@
-import { useSelector } from "react-redux";
-import { myState } from "../types/typeContext";
+import { useAppSelector } from "./typescriptHooks/typescript";
 
 export function useAuth () {
-    const {email} = useSelector((state: myState) => state.user);
+    const email = useAppSelector(state => state.user.email)
     return email
 }

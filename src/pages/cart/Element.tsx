@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './element.scss';
 import { Cart } from './Cart';
 import { IElement } from '../../types/typeContext';
@@ -8,7 +8,7 @@ import { RootState } from '../../store/store';
 import { Loader } from '../../utilits/Loader/Loader';
 
 export const Element = () => {
-const id = useSelector((state: RootState) =>state.element.id);
+const id = useSelector((state: RootState) => state.element.id);
 const {data, isError, isLoading} = useGetElementQuery(id);
 
   return (

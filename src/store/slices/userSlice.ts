@@ -20,6 +20,7 @@ const userSlice = createSlice({
             state.id = '';
         }
     }
+
 })
 
 export const {setUser, removeUser} = userSlice.actions;

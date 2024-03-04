@@ -1,13 +1,25 @@
 import React from 'react';
-import { History } from './history/History';
-import { Like } from './like/Like';
+import { Link } from 'react-router-dom';
+import './profile.scss'
 
 
 export const Profile = () => {
   return (
-    <div>
-        <History />
-        <Like />
+    <div className='profile'>
+      
+        <Link to='/history'>
+          <button>
+          history
+          </button>
+        </Link>
+      
+      
+      <Link to='/like'>
+          <button>
+          like
+          </button>  
+        </Link>
+      
     </div>
   )
 }

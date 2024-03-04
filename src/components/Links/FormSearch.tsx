@@ -5,17 +5,21 @@ import { ThemeContext } from '../../context/context';
 import { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSearch } from '../../store/slices/searchSlise';
+import { localStorageHistory } from '../../localStorage/workLocalStorage/localStorageHistory';
+import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
 
 
 export const FormSearch = () => {
 const {dark} = useContext(ThemeContext); 
 const [searchText, setSearchText] =  useState('');
 const dispatch = useDispatch();
+const email = useAppSelector(state => state.user.email)
 
 function searchClick (searchText: string) {
     dispatch(setSearch({
         search: searchText,
     }))
+    localStorageHistory(email, searchText)
 }
     return (
     <div className='search-all'>

@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent, ReactNode, createContext, useState } from 'react';
+import React, { useState } from 'react';
 import { IThemeContext} from '../types/typeContext';
 
 const defaultState = {

@@ -1,27 +1,11 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import { UseDispatch, useDispatch } from 'react-redux';
-import { setUser } from '../../../store/slices/userSlice';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
+import { useLogin } from '../../../hooks/useLogin';
 
 
 export const FormLogIn = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const handleSignUp = (email: string, password: string) => {
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-    .then(({user}) => {
-      dispatch(setUser({
-        email: user.email,
-        id: user.uid,
-      }));
-      navigate('/')
-    })
-    .catch(console.error)
-  } 
 
+  const handleSignUp = useLogin()
   const formik = useFormik({
     initialValues: {
       email: '',

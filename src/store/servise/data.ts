@@ -18,3 +18,4 @@ export const dataApi = createApi({
 export const {useGetAllCoctailQuery} = dataApi;
 export const {useGetElementQuery} = dataApi;
 export const {useGetSearchQuery} = dataApi;
+export default dataApi.reducer
