@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Coctail } from './Coctail';
 import { IDrink } from '../../types/typeContext';
 import { useGetAllCoctailQuery } from '../../store/servise/data';
 import'./Main.scss'
 import { Loader } from '../../utilits/Loader/Loader';
-import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
-import { getLocalStorageLike } from '../../localStorage/getLocalStorage/getLocalStorageLike';
+import { inUser } from '../../hooks/inUser';
+
+
 
 
 export const Main = () => {
+  inUser()
 const {data, isError, isLoading} = useGetAllCoctailQuery('');
   return (
     <div>

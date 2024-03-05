@@ -8,6 +8,7 @@ import { AuthLog } from './Links/AuthLog';
 import { useAuth } from '../hooks/useAuth';
 
 export const Navbar = () => {
+
   const isAuth = useAuth()
   const {dark} = useContext(ThemeContext)
   return (

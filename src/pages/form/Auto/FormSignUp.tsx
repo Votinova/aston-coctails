@@ -2,9 +2,6 @@ import React from 'react';
 import { useFormik } from 'formik';
 import { useSignin } from '../../../hooks/useSignin';
 
-
-
-
 export const FormSignUp = () => {
 
   const handleSignIn = useSignin();

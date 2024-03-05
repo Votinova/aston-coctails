@@ -5,12 +5,11 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 
 
 
+
 export const ButtonLike = (props: {data: IDrink}) => {
 const {isLike, click} = useLocalStorage(props.data)
-
 const clickLike = () => {
     click()
- 
 }
     return (
     <div>

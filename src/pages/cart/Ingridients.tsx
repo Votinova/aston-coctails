@@ -3,7 +3,6 @@ import { IElement } from '../../types/typeContext'
 import { Ingridient } from './Ingridient'
 
 export const Ingridients = (props : {data: IElement}) => {
- // Не знаю можно ли сделать в виде цикла, чтобы не повторяться?
   return (
     <ul>
     <Ingridient data={props.data.strIngredient1} />
