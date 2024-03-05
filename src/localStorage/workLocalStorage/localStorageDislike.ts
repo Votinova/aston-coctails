@@ -1,10 +1,10 @@
 import { IDrink } from "../../types/typeContext";
-import { getLocalStorageLike } from "../getLocalStorage/getLocalStorageLike";
+import { loadFromLocalStorage } from "../loadFromLocalStorage";
 import { saveToLocalStorage } from "../saveToLocalStorage";
 
 export const localStorageDislike = (email: string, id: number) => {
-    const dataLikes = getLocalStorageLike(email)
-    const likes = dataLikes.filter((like: IDrink) => like.idDrink !== id)
+    const dataLikes = loadFromLocalStorage(email);
+    const likes = dataLikes.likes.filter((like: IDrink) => like?.idDrink !== id)
     const state = {
         ...dataLikes,
         likes : likes

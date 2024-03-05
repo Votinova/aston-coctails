@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { IDrink } from '../../types/typeContext'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
@@ -9,14 +9,12 @@ import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
 import { isLikeElement } from '../../localStorage/workLocalStorage/isLikeElement'
 import { localStorageDislike } from '../../localStorage/workLocalStorage/localStorageDislike';
 import { localStorageLike } from '../../localStorage/workLocalStorage/localStorageLike'
-import { setIsLike } from '../../store/slices/isLikeSlice'
 import { getLocalStorageLike } from '../../localStorage/getLocalStorage/getLocalStorageLike'
 
 
 export const Coctail = (props: {data: IDrink}) => {
 const dispatch = useDispatch();
 const isAuth = useAuth();
-const email = useAppSelector(state => state.user.email);
 
  function clickElement () {
   dispatch(setElement({

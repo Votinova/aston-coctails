@@ -2,8 +2,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import userReducer from './slices/userSlice';
 import elementReducer from './slices/elementSlice'
 import searchReducer from './slices/searchSlise'
-import likesReducer from './slices/likesSlice'
-import isLikeReducer from './slices/isLikeSlice'
 import  dataApiReducer from "./servise/data";
 import  {dataApi} from "./servise/data";
 import { setupListeners } from '@reduxjs/toolkit/query'
@@ -15,8 +13,6 @@ export const store = configureStore({
         user: userReducer,
         element: elementReducer,
         search: searchReducer,
-        likes: likesReducer,
-        isLike: isLikeReducer,
         [dataApi.reducerPath]: dataApiReducer
     },
     middleware: getDefaultMiddleware =>
@@ -26,8 +22,6 @@ export const store = configureStore({
 const rootReducer = combineReducers({user: userReducer,  
     element: elementReducer,
     search: searchReducer,
-    likes: likesReducer,
-    isLike: isLikeReducer,
     [dataApi.reducerPath]: dataApiReducer});
 
 export type RootState = ReturnType<typeof rootReducer>;

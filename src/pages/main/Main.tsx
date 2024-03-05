@@ -9,7 +9,6 @@ import { getLocalStorageLike } from '../../localStorage/getLocalStorage/getLocal
 
 
 export const Main = () => {
-const email = useAppSelector(state => state.user.email)
 const {data, isError, isLoading} = useGetAllCoctailQuery('');
   return (
     <div>

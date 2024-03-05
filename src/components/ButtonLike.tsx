@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { IDrink } from '../types/typeContext'
-import { useAppDispatch, useAppSelector } from '../hooks/typescriptHooks/typescript';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
 
-export const ButtonLike = (props: {data: IDrink}) => {
 
-const data = useLocalStorage(props.data)
-const isLike = data.isLike
-const click = data.click
-console.log(isLike)
+
+export const ButtonLike = (props: {data: IDrink}) => {
+const {isLike, click} = useLocalStorage(props.data)
+
+const clickLike = () => {
+    click()
+ 
+}
     return (
     <div>
-        <button onClick={() => click()}>
+        <button onClick={clickLike}>
           {isLike? 'dislike' : 'like'}
         </button>
     </div>

@@ -15,6 +15,7 @@ import { store } from './store/store';
 import { History } from './pages/Profile/history/History';
 import { Like } from './pages/Profile/like/Like';
 
+
 function App() {
   return (
    <div>

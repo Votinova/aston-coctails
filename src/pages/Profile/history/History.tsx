@@ -8,14 +8,13 @@ export const History = () => {
   const history = getLocalStorageHistory(email);
   return (
     <div>
-      {history?.length !== 0 ?   <div>
-      {history?.map((his: string) => {
-        return <His data={his} key={his}/>
-      })}
-    </div>
-    :
-    <div>no history</div>
-    }
-    </div>
+    {history?.length !== 0?  <div>
+    {history.map((his: string) => {
+      return <His data={his} key={his}/>
+    })}
+  </div>
+  :
+  <div>No history</div>}
+  </div>
   )
 }

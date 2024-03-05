@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useAppSelector } from './typescriptHooks/typescript';
-import { IDrink } from '../types/typeContext';
-import { getLocalStorageLike } from '../localStorage/getLocalStorage/getLocalStorageLike';
+
+import { loadFromLocalStorage } from '../localStorage/loadFromLocalStorage';
+
 
 export const useGetISLocalStore = () => {
-    const email = useAppSelector(state => state.user.email);
-
-  const [likes, setLikes] = useState<IDrink[]>([]);
-  useEffect(() => {
-    setLikes(() => getLocalStorageLike(email))
-  }, [])
-    return  likes
+  const user = useAppSelector(state => state.user.email);
+    const initialDataLocalStorage = loadFromLocalStorage(user);
+    const likes = initialDataLocalStorage?.likes
+  
+    return likes
 }

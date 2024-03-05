@@ -1,5 +1,4 @@
 
-import { IDrink } from "../../types/typeContext";
 import { getLocalStorageLike } from "../getLocalStorage/getLocalStorageLike"
 
 export const isLikeElement = (email: string, id: number) => {
