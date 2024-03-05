@@ -5,6 +5,7 @@ import { useAuth } from '../../hooks/useAuth'
 import { useDispatch } from 'react-redux'
 import { setElement } from '../../store/slices/elementSlice'
 import { ButtonLike } from '../../components/ButtonLike'
+import PropTypes from 'prop-types';
 
 
 
@@ -28,4 +29,11 @@ const isAuth = useAuth();
         {isAuth && <ButtonLike data={props.data} />}
     </div>
   )
+}
+Coctail.PropTypes = {
+  data: PropTypes.shape({
+    idDrink: PropTypes.number,
+    strDrink: PropTypes.string,
+    strDrinkThumb: PropTypes.string
+  })
 }
