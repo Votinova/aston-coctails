@@ -3,8 +3,7 @@ import {BrowserRouter as  Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { ThemeContextProvider } from './context/context';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
+import { getElementId } from './localStorage/getElementId';
 
 
 const Main = lazy(() => import('./pages/main/mainIndex'))
@@ -20,9 +19,9 @@ const FormSignUp = lazy(() => import('./components/Auto/formSignIndex'))
 
 
 function App() {
+ const id = getElementId()
   return (
    <div>
-    <Provider store={store}>
         <ThemeContextProvider>
           <Navbar />
           <Suspense fallback={<div>Loading...</div>}>
@@ -30,7 +29,7 @@ function App() {
               <Route path='/' element={<Main />} />
               <Route path='/search' element={<Search />} />
               <Route path='/profile' element={<Profile />} />
-              <Route path='/element' element={<Element />} />
+              <Route path={`/element/${id}`} element={<Element />} />
               <Route path='/sign' element={<Sign />} />
               <Route path='/formsignup' element={<FormSignUp />} />
               <Route path='/formlogin' element={<FormLogIn />} />   
@@ -39,7 +38,6 @@ function App() {
             </Routes>
           </Suspense>
         </ThemeContextProvider>
-    </Provider>
    </div>
   );
 }

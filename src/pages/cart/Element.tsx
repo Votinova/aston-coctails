@@ -3,8 +3,7 @@ import '../../scss/element.scss';
 import { Cart } from '../../components/Cart';
 import { IElement } from '../../types/typeContext';
 import { useGetElementQuery } from '../../store/servise/data';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { getElementId } from '../../localStorage/getElementId';
 import { Loader } from '../../utilits/Loader/Loader';
 
 
@@ -12,7 +11,7 @@ export const Element = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-const id = useSelector((state: RootState) => state.element.id);
+  const id = getElementId()
 const {data, isLoading} = useGetElementQuery(id);
 
   return (

@@ -19,10 +19,11 @@ const isAuth = useAuth();
     id: props.data.idDrink
   }))
  }
+
   return (
     <div className='drink-card'>
         <img src={props.data.strDrinkThumb} title='image' alt='Image'/>
-        <Link  to='/element' className='link' onClick={ () => clickElement()}>
+        <Link to={`/element/${props.data.idDrink}`} className='link' onClick={ () => clickElement()}>
           <h1>
               {props.data.strDrink}
           </h1>
