@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { setSearch } from '../../../store/slices/searchSlise';
+import { setSearch } from '../store/slices/searchSlise';
 import { useDispatch } from 'react-redux';
 
 export const His = (props: {data: string}) => {

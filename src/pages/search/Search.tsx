@@ -1,24 +1,23 @@
 import React from 'react'
-import'./Search.scss';
+import'../../scss/Search.scss';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import {  useGetSearchQuery } from '../../store/servise/data';
 import { Loader } from '../../utilits/Loader/Loader';
-import { Coctail } from '../main/Coctail';
+import { Coctail } from '../../components/Coctail';
 import { IDrink } from '../../types/typeContext';
 export const Search = () => {
   const search = useSelector((state: RootState) => state.search.search);
-  const {data, isError, isLoading} = useGetSearchQuery(search);
+  const {data, isLoading} = useGetSearchQuery(search);
   return (
     <div>
-    {isLoading? <Loader / > 
-    :
-    <div className='drinks-card'>
-    {data && data.drinks.map((drink: IDrink) => {
+   {data !== null ? isLoading? <Loader /> 
+    : (
+      <div className='drinks-card'>
+    {data && data.map((drink: IDrink) => {
       return <Coctail key={drink.idDrink} data={drink} />
     })}
-   </div>
-    }
+   </div>): <h1> No coctails</h1>}
     </div>
   )
 }

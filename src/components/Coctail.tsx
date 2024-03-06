@@ -1,11 +1,12 @@
 import React from 'react'
-import { IDrink } from '../../types/typeContext'
+import { IDrink } from '../types/typeContext'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../../hooks/useAuth'
+import { useAuth } from '../hooks/useAuth'
 import { useDispatch } from 'react-redux'
-import { setElement } from '../../store/slices/elementSlice'
-import { ButtonLike } from '../../components/ButtonLike'
+import { setElement } from '../store/slices/elementSlice'
+import { ButtonLike } from './ButtonLike'
 import PropTypes from 'prop-types';
+import ErroBoundary from '../error-boundary /errorBoundary'
 
 
 
@@ -26,7 +27,9 @@ const isAuth = useAuth();
               {props.data.strDrink}
           </h1>
         </Link>
+        <ErroBoundary>
         {isAuth && <ButtonLike data={props.data} />}
+        </ErroBoundary>
     </div>
   )
 }

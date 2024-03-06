@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { transormResponseDrinks } from '../../types/typeContext';
 
 export const dataApi = createApi({
     reducerPath: "coctails",
@@ -11,7 +12,8 @@ export const dataApi = createApi({
         query: (id) => `lookup.php?i=${id}`
       }),
       getSearch: builder.query({
-        query:(search) => `search.php?s=${search}`
+        query:(search) => `search.php?s=${search}`,
+        transformResponse: (response: transormResponseDrinks) => response.drinks
       })
     }),
 });

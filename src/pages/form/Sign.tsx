@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './sign.scss'
+import '../../scss/sign.scss'
 
 
 export const Sign = () => {

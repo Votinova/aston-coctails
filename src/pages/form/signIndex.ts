@@ -1,0 +1,1 @@
+export { Sign as default } from "./Sign";

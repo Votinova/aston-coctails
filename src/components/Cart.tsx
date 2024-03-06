@@ -1,5 +1,5 @@
 import React from 'react'
-import { IElement } from '../../types/typeContext'
+import { IElement } from '../types/typeContext'
 import { Ingridients } from './Ingridients';
 
 export const Cart = (props : {data: IElement}) => {

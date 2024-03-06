@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './Navbar.scss'
+import '../scss/Navbar.scss'
 import { ThemeContext } from '../context/context';
 import { Bootle } from './Links/Bootle';
 import { FormSearch } from './Links/FormSearch';

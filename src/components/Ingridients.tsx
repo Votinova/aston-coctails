@@ -1,5 +1,5 @@
 import React from 'react'
-import { IElement } from '../../types/typeContext'
+import { IElement } from '../types/typeContext'
 import { Ingridient } from './Ingridient'
 
 export const Ingridients = (props : {data: IElement}) => {

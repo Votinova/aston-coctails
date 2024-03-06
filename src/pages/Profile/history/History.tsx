@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppSelector } from '../../../hooks/typescriptHooks/typescript'
 import { getLocalStorageHistory } from '../../../localStorage/getLocalStorage/getLocalStorageHistory'
-import { His } from './His'
+import { His } from '../../../components/His'
 
 export const History = () => {
   const email = useAppSelector(state => state.user.email)

@@ -1,6 +1,6 @@
 import React from 'react'
-import './element.scss';
-import { Cart } from './Cart';
+import '../../scss/element.scss';
+import { Cart } from '../../components/Cart';
 import { IElement } from '../../types/typeContext';
 import { useGetElementQuery } from '../../store/servise/data';
 import { useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import { Loader } from '../../utilits/Loader/Loader';
 
 export const Element = () => {
 const id = useSelector((state: RootState) => state.element.id);
-const {data, isError, isLoading} = useGetElementQuery(id);
+const {data, isLoading} = useGetElementQuery(id);
 
   return (
     <div>
