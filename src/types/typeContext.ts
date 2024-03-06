@@ -40,7 +40,7 @@ export interface myState {
     }
 }
 
-interface typeResponse{
+export interface typeResponse{
     dateModified: string,
     idDrink: number,
     strAlcoholic: string,
