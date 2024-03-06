@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../../scss/element.scss';
 import { Cart } from '../../components/Cart';
 import { IElement } from '../../types/typeContext';
@@ -7,7 +7,11 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { Loader } from '../../utilits/Loader/Loader';
 
+
 export const Element = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 const id = useSelector((state: RootState) => state.element.id);
 const {data, isLoading} = useGetElementQuery(id);
 
