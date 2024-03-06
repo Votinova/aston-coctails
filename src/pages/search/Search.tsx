@@ -1,14 +1,15 @@
 import React from 'react'
 import'../../scss/Search.scss';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
 import {  useGetSearchQuery } from '../../store/servise/data';
 import { Loader } from '../../utilits/Loader/Loader';
 import { Coctail } from '../../components/Coctail';
 import { typeResponse } from '../../types/typeContext';
+import { getSearch } from '../../localStorage/getSearch';
+import { inUser } from '../../hooks/inUser';
 
 export const Search = () => {
-  const search = useSelector((state: RootState) => state.search.search);
+ inUser()
+  const search = getSearch()
   const {data, isLoading} = useGetSearchQuery(search);
 
   return (

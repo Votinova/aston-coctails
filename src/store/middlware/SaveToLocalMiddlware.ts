@@ -8,6 +8,11 @@ export const SaveToLocalMiddleware: Middleware <RootState> = storeApi => next =>
     if (id !== 0) {
         localStorage.setItem('id', id)
     }
+    const search = storeApi.getState().search.search
+   
+    if (search !== '') {
+        localStorage.setItem('search', search)
+    }
     return result;
 }
 

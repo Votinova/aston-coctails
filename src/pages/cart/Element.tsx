@@ -5,9 +5,11 @@ import { IElement } from '../../types/typeContext';
 import { useGetElementQuery } from '../../store/servise/data';
 import { getElementId } from '../../localStorage/getElementId';
 import { Loader } from '../../utilits/Loader/Loader';
+import { inUser } from '../../hooks/inUser';
 
 
 export const Element = () => {
+  inUser()
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

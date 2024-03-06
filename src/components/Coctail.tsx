@@ -7,8 +7,7 @@ import { setElement } from '../store/slices/elementSlice'
 import { ButtonLike } from './ButtonLike'
 import PropTypes from 'prop-types';
 import ErroBoundary from '../error-boundary /errorBoundary'
-
-
+import '../scss/Coctail.scss'
 
 export const Coctail = (props: {data: IDrink}) => {
 const dispatch = useDispatch();
@@ -19,7 +18,6 @@ const isAuth = useAuth();
     id: props.data.idDrink
   }))
  }
-
   return (
     <div className='drink-card'>
         <img src={props.data.strDrinkThumb} title='image' alt='Image'/>
@@ -34,9 +32,9 @@ const isAuth = useAuth();
     </div>
   )
 }
-Coctail.PropTypes = {
+Coctail.propTypes = {
   data: PropTypes.shape({
-    idDrink: PropTypes.number,
+    idDrink: PropTypes.string,
     strDrink: PropTypes.string,
     strDrinkThumb: PropTypes.string
   })

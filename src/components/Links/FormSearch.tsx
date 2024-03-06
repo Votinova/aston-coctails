@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { setSearch } from '../../store/slices/searchSlise';
 import { localStorageHistory } from '../../localStorage/workLocalStorage/localStorageHistory';
 import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
+import { getSearch } from '../../localStorage/getSearch';
 
 
 export const FormSearch = () => {
@@ -24,11 +25,11 @@ function searchClick (searchText: string) {
     return (
     <div className='search-all'>
         <input title='search' 
+        value={searchText}
         className={dark? 'search dark' : 'search'} 
         onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setSearchText(e.target.value)}
-        onSubmit={() => searchClick(searchText)}
         />
-        <Link to='/search'>
+        <Link to={`/search/${searchText}`}>
                 <button 
                 title="search"  
                 className='logo-search'

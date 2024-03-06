@@ -11,7 +11,7 @@ export const His = (props: {data: string}) => {
         }))
     }
     return (
-    <Link to='/search' onClick={() => searchClick(props.data)}>
+    <Link to={`/search/${props.data}`} onClick={() => searchClick(props.data)}>
        <li>
        {props.data}
        </li>

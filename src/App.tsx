@@ -4,6 +4,7 @@ import './App.css';
 import { Navbar } from './components/Navbar';
 import { ThemeContextProvider } from './context/context';
 import { getElementId } from './localStorage/getElementId';
+import { getSearch } from './localStorage/getSearch';
 
 
 const Main = lazy(() => import('./pages/main/mainIndex'))
@@ -20,6 +21,7 @@ const FormSignUp = lazy(() => import('./components/Auto/formSignIndex'))
 
 function App() {
  const id = getElementId()
+ const search = getSearch()
   return (
    <div>
         <ThemeContextProvider>
@@ -27,7 +29,7 @@ function App() {
           <Suspense fallback={<div>Loading...</div>}>
           <Routes>
               <Route path='/' element={<Main />} />
-              <Route path='/search' element={<Search />} />
+              <Route path={`/search/${search}`} element={<Search />} />
               <Route path='/profile' element={<Profile />} />
               <Route path={`/element/${id}`} element={<Element />} />
               <Route path='/sign' element={<Sign />} />
