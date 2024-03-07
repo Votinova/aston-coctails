@@ -11,7 +11,7 @@
 
 [+] Есть рендеринг списков: [Main](src/pages/main/Main.tsx), [Search](src/pages/search/Search.tsx)
 
-[+] Реализована хотя бы одна форма [formLogIn](src/components/forms/FormLogIn.tsx) [formSignUp](src/components/forms/FormSignUp.tsx)
+[+] Реализована хотя бы одна форма [formLogIn](src/components/Auto/forms/FormLogIn.tsx) [formSignUp](src/components/Auto/forms/FormSignUp.tsx)
 
 [+] Есть применение Контекст API [Context](src/context/context.tsx)
 
@@ -19,8 +19,7 @@
 
 [+] Есть хотя бы один кастомный хук [useLocalStorage](src/hooks/useLocalStorage.tsx)
 
-[+] Хотя бы несколько компонентов используют PropTypes [Coctail](src/components/Coctail.tsx), [Ingridient]
-(src/components/Ingridient.tsx)
+[+] Хотя бы несколько компонентов используют PropTypes [Coctail](src/components/Coctail.tsx), [Ingridient(src/components/Ingridient.tsx)
 
 [+]Поиск не должен триггерить много запросов к серверу: поиск только по клику
 
@@ -30,7 +29,7 @@ Redux
 
 [+] Используем Modern Redux with Redux Toolkit 
 
-[+] Используем слайсы [userSlice](src/store/slices/userSlice.ts), [searchSlice](src/store/slices/searchSlice.ts), [elementSlice](src/store/slices/elementSlice.ts)
+[+] Используем слайсы [userSlice](src/store/slices/userSlice.ts), [searchSlice](src/store/slices/searchSlise.ts), [elementSlice](src/store/slices/elementSlice.ts)
 
 [+] Есть хотя бы одна кастомная мидлвара [SaveToLocalMiddlware](src/store/middlware/SaveToLocalMiddlware.ts)
 
