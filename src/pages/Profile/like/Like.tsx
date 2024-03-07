@@ -3,10 +3,9 @@ import { IDrink } from '../../../types/typeContext'
 import { Coctail } from '../../../components/Coctail'
 import { useGetISLocalStore } from '../../../hooks/useGetISLocalStore'
 import { useAppSelector } from '../../../hooks/typescriptHooks/typescript'
-import { inUser } from '../../../hooks/inUser'
+import { inUser } from '../../../hooks/inUser';
 
 export const Like = () => {
-
 const user = useAppSelector(state => state.user.email)
 inUser()
 const [likes, setLikes] = useState(() => useGetISLocalStore(user))

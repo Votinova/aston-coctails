@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import { setSearch } from '../../store/slices/searchSlise';
 import { localStorageHistory } from '../../localStorage/workLocalStorage/localStorageHistory';
 import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
-import { getSearch } from '../../localStorage/getSearch';
 
 
 export const FormSearch = () => {

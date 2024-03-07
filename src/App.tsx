@@ -5,6 +5,8 @@ import { Navbar } from './components/Navbar';
 import { ThemeContextProvider } from './context/context';
 import { getElementId } from './localStorage/getElementId';
 import { getSearch } from './localStorage/getSearch';
+import { useAppSelector } from './hooks/typescriptHooks/typescript';
+import { inUser } from './hooks/inUser';
 
 
 const Main = lazy(() => import('./pages/main/mainIndex'))
@@ -20,6 +22,7 @@ const FormSignUp = lazy(() => import('./components/Auto/formSignIndex'))
 
 
 function App() {
+  inUser()
  const id = getElementId()
  const search = getSearch()
   return (

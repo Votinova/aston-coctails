@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import '../../scss/profile.scss'
 
 
+
 export const Profile = () => {
+
   return (
     <div className='profile'>
       
