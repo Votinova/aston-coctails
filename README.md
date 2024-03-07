@@ -19,7 +19,7 @@
 
 [+] Есть хотя бы один кастомный хук [useLocalStorage](src/hooks/useLocalStorage.tsx)
 
-[+] Хотя бы несколько компонентов используют PropTypes [Coctail](src/components/Coctail.tsx), [Ingridient(src/components/Ingridient.tsx)
+[+] Хотя бы несколько компонентов используют PropTypes [Coctail](src/components/Coctail.tsx), [Ingridient](src/components/Ingridient.tsx)
 
 [+]Поиск не должен триггерить много запросов к серверу: поиск только по клику
 
