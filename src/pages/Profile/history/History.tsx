@@ -1,14 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useAppSelector } from '../../../hooks/typescriptHooks/typescript'
 import { getLocalStorageHistory } from '../../../localStorage/getLocalStorage/getLocalStorageHistory'
 import { inUser } from '../../../hooks/inUser'
 import { FixedSizeList as List } from 'react-window'
-import { useNavigate } from 'react-router-dom'
+
 import { useDispatch } from 'react-redux'
 import { setSearch } from '../../../store/slices/searchSlise'
 import { Link } from 'react-router-dom'
-
-
 
 export const History = () => {
 inUser()
