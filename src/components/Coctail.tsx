@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 import { setElement } from '../store/slices/elementSlice'
 import { ButtonLike } from './ButtonLike'
 import PropTypes from 'prop-types';
-import ErroBoundary from '../error-boundary /errorBoundary'
+import ErroBoundary from '../errorBoundary /errorBoundary'
 import '../scss/Coctail.scss'
 
 export const Coctail = (props: {data: IDrink}) => {
