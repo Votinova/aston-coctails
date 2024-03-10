@@ -1,4 +1,5 @@
 
+import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
 import { RootState } from '../store'
 import { Middleware } from 'redux'
 
@@ -13,6 +14,7 @@ export const SaveToLocalMiddleware: Middleware <RootState> = storeApi => next =>
     if (search !== '') {
         localStorage.setItem('search', search)
     }
+
     return result;
 }
 

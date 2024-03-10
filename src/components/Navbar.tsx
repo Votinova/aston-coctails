@@ -1,22 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import '../scss/Navbar.scss'
 import { ThemeContext } from '../context/context';
 import { Bootle } from './Links/Bootle';
 import { FormSearch } from './Links/FormSearch';
 import { Profile } from './Links/Profile';
 import { AuthLog } from './Links/AuthLog';
-import { useAuth } from '../hooks/useAuth';
 
 
-export const Navbar = () => {
-  const isAuth = useAuth()
+export const Navbar = (props: {isAuth: string}) => {
   const {dark} = useContext(ThemeContext)
+
   return (
     <div className={dark? 'navbar dark' : 'navbar'}>
       <Bootle />
       <FormSearch />
-     {isAuth && <Profile />}
-      <AuthLog />
+     {props.isAuth && <Profile /> }
+      <AuthLog isAuth={props.isAuth} />
     </div>
   )
 }

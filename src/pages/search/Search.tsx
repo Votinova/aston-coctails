@@ -6,12 +6,15 @@ import { Coctail } from '../../components/Coctail';
 import { typeResponse } from '../../types/typeContext';
 import { getSearch } from '../../localStorage/getSearch';
 import { inUser } from '../../hooks/inUser';
+import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
 
 export const Search = () => {
  inUser()
   const search = getSearch()
   const {data, isLoading} = useGetSearchQuery(search);
 
+  const ser = useAppSelector(state => state.search.search)
+  console.log(ser)
   return (
     <div>
    {data !== null ? isLoading? <Loader /> 

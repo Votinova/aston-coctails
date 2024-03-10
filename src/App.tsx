@@ -1,12 +1,11 @@
 import React, { Suspense, lazy } from 'react';
 import {BrowserRouter as  Router, Routes, Route } from 'react-router-dom'
 import './App.css';
-import { Navbar } from './components/Navbar';
 import { ThemeContextProvider } from './context/context';
 import { getElementId } from './localStorage/getElementId';
 import { getSearch } from './localStorage/getSearch';
-import { useAppSelector } from './hooks/typescriptHooks/typescript';
 import { inUser } from './hooks/inUser';
+import { Header } from './components/Header';
 
 
 const Main = lazy(() => import('./pages/main/mainIndex'))
@@ -19,8 +18,6 @@ const History = lazy(() => import('./pages/Profile/history/historyIndex'))
 const FormLogIn = lazy(() => import('./components/Auto/formLoginIndex'))
 const FormSignUp = lazy(() => import('./components/Auto/formSignIndex'))
 
-
-
 function App() {
   inUser()
  const id = getElementId()
@@ -28,8 +25,8 @@ function App() {
   return (
    <div>
         <ThemeContextProvider>
-          <Navbar />
-          <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Header />
           <Routes>
               <Route path='/' element={<Main />} />
               <Route path={`/search/${search}`} element={<Search />} />

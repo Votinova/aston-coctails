@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { IThemeContext} from '../types/typeContext';
 
 const defaultState = {
@@ -10,11 +10,14 @@ export const ThemeContextProvider: React.FC<{children: React.ReactNode}> = ({chi
     const toggleDark = () => {
         setDark(!dark);
     }
+    const value = useMemo(
+        () => ({
+            dark, toggleDark
+        }),
+    [dark])
   return (
     <ThemeContext.Provider
-        value={{
-            dark, toggleDark,
-        }}
+        value={value}
     >
         {children}
     </ThemeContext.Provider>

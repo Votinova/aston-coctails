@@ -26,7 +26,11 @@ function searchClick (searchText: string) {
         <input title='search' 
         value={searchText}
         className={dark? 'search dark' : 'search'} 
-        onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setSearchText(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {setSearchText(() => e.target.value); 
+        dispatch(setSearch({
+            search: searchText,
+        })
+        )}}
         />
         <Link to={`/search/${searchText}`}>
                 <button 

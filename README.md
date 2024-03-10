@@ -11,7 +11,7 @@
 
 [+] Есть рендеринг списков: [Main](src/pages/main/Main.tsx), [Search](src/pages/search/Search.tsx)
 
-[+] Реализована хотя бы одна форма [formLogIn](src/components/Auto/forms/FormLogIn.tsx) [formSignUp](src/components/Auto/forms/FormSignUp.tsx)
+[+] Реализована хотя бы одна форма [formLogIn](src/components/Auto/forms/FormLogIn.tsx),  [formSignUp](src/components/Auto/forms/FormSignUp.tsx)
 
 [+] Есть применение Контекст API [Context](src/context/context.tsx)
 
@@ -45,7 +45,7 @@ Redux
 
 [+] Реализована виртуализация списков [hisotory](src/pages/Profile/history/History.tsx)
 
-[+] Связь UI и бизнес-логики построена не через команды, а через события. [formLogIn](src/components/forms/FormLogIn.tsx) [formSignUp](src/components/forms/FormSignUp.tsx)
+[+] Связь UI и бизнес-логики построена не через команды, а через события. [formLogIn](src/components/forms/FormLogIn.tsx),  [formSignUp](src/components/forms/FormSignUp.tsx)
 
 
 
