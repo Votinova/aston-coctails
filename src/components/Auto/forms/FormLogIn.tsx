@@ -5,14 +5,14 @@ import { useLogin } from '../../../hooks/useLogin';
 
 export const FormLogIn = () => {
 
-  const handleSignUp = useLogin()
+  const handleSignUp = useLogin();
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
-    onSubmit: values => {
-      handleSignUp(values.email, values.password);
+    onSubmit: (values) => {
+     handleSignUp(values.email, values.password);
     },
   });
   return (

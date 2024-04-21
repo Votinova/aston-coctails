@@ -14,7 +14,7 @@ export const useLocalStorage = (coctail: IDrink) => {
   
  const click = () => {
     if (isLike) {
-        localStorageDislike(user, coctail.idDrink)
+        localStorageDislike(user, coctail)
         const initialDataLocalStorage = loadFromLocalStorage(user);
         setIsLike(initialDataLocalStorage.likes.some((like: IDrink) => like.idDrink === coctail.idDrink))
     } else {
