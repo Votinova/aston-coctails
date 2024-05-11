@@ -1,8 +1,8 @@
 import React from 'react'
-import { Navbar } from './Navbar'
+import { NavbarMenu } from './Navbar/Navbar'
 import { useAuth } from '../hooks/useAuth'
 
 export const Header = () => {
     const isAuth = useAuth()
-        return <Navbar isAuth={isAuth} />
+        return <NavbarMenu isAuth={isAuth} />
 }

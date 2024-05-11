@@ -4,19 +4,31 @@ import { Coctail } from '../../../components/Coctail'
 import { useGetISLocalStore } from '../../../hooks/useGetISLocalStore'
 import { useAppSelector } from '../../../hooks/typescriptHooks/typescript'
 import { inUser } from '../../../hooks/inUser';
+import { useCallback } from 'react';
+import { getLikesQuery } from '../../../hooks/getLikes'
 
 export const Like = () => {
-const user = useAppSelector(state => state.user.email)
+const email = useAppSelector(state => state.user.email)
 inUser()
-const [likes, setLikes] = useState(() => useGetISLocalStore(user))
+// const [likes, setLikes] = useState(() => useGetISLocalStore(email))
+// useEffect(() => {
+//  setLikes(() => useGetISLocalStore(email))
+// },[likes])
+const [likes, setLikes] = useState<IDrink[]>([])
+const fetchData = useCallback(async() => {
+  const data = await getLikesQuery(email);
+  setLikes(data)
+}, [email])
 useEffect(() => {
- setLikes(() => useGetISLocalStore(user))
-},[likes])
+  fetchData()
+  .catch(console.error)
+}, [fetchData])
+console.log(likes.length !== 0)
   return (
     <div>
       {likes?.length !== 0?  <div>
       {likes?.map((like: IDrink) => {
-        return <Coctail data={like} key={like.idDrink} />
+        return <Coctail id={like.idDrink} key={like.idDrink} />
       })}
     </div>
     :

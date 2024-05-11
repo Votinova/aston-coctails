@@ -1,7 +1,7 @@
 import { IDrink } from "../../types/typeContext";
 import { loadFromLocalStorage } from "../loadFromLocalStorage";
 import { saveToLocalStorage } from "../saveToLocalStorage";
-import { useDisLikes } from "../../hooks/useLikes";
+import { DeleteLike } from  '../../hooks/DeleteLike'
 
 export const localStorageDislike = (email: string, coctail: IDrink) => {
     const dataLikes = loadFromLocalStorage(email);
@@ -11,5 +11,5 @@ export const localStorageDislike = (email: string, coctail: IDrink) => {
         likes : likes
     }
     saveToLocalStorage(email,state);
-    useDisLikes(email, coctail.idDrink)
+    DeleteLike(email, coctail.idDrink)
 }

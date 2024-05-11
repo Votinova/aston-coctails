@@ -14,10 +14,11 @@ export const dataApi = createApi({
       getSearch: builder.query({
         query:(search) => `search.php?s=${search}`,
         transformResponse: (response: transormResponseDrinks) => response.drinks
-      })
+      }),
     }),
 });
 export const {useGetAllCoctailQuery} = dataApi;
 export const {useGetElementQuery} = dataApi;
 export const {useGetSearchQuery} = dataApi;
 export default dataApi.reducer
+

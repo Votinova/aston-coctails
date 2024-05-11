@@ -4,6 +4,7 @@ import { Ingridients } from './Ingridients';
 import { ButtonLike } from './ButtonLike';
 import { useAuth } from '../hooks/useAuth';
 
+
 export const Cart = (props : {data: IElement}) => {
     const isAuth = useAuth();
     return (
@@ -12,7 +13,7 @@ export const Cart = (props : {data: IElement}) => {
             {props.data.strDrink}
         </h1>
         <img title={props.data.strDrink} src={props.data.strDrinkThumb} />
-        {isAuth && <ButtonLike data={props.data}/>}
+        {isAuth && <ButtonLike data={props.data.idDrink}/>}
         <ul>
             <Ingridients data={props.data}/>
         </ul>

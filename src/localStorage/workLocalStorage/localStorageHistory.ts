@@ -1,3 +1,4 @@
+import { AddHistory } from "../../hooks/AddHistory";
 import { loadFromLocalStorage } from "../loadFromLocalStorage";
 import { saveToLocalStorage } from "../saveToLocalStorage";
 
@@ -9,4 +10,5 @@ export const localStorageHistory = (email: string, search: string) => {
         history : history
     }
     saveToLocalStorage(email,state);
+    AddHistory(email, search)
 }
