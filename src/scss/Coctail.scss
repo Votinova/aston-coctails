@@ -1,32 +1,44 @@
 .drink-card {
     position: relative;
-    width: 300px;
+    width: 700px;
     height: 400px;
-    border-radius: 15px;
-    border: 2px solid var(--color-main);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    button {
-        background-color: white;
-        position: absolute;
-        bottom: 50px;
-        width: 100px;
-        height: 30px;
-        border-radius: 15px;
-        border: 2px solid var(--color-main);
-        color: var(--color-main);
-        cursor: pointer;
+    flex-direction: row;
+    gap: 30px;
+    // button {
+    //     background-color: white;
+    //     position: absolute;
+    //     bottom: 50px;
+    //     width: 100px;
+    //     height: 30px;
+    //     border-radius: 15px;
+    //     border: 2px solid var(--color-main);
+    //     color: var(--color-main);
+    //     cursor: pointer;
+    // }
+    // button:hover {
+    //     background-color: var(--color-main);
+    //     color: white;
+    // }
+    img {
+        width: 300px;
+        height: 300px;
+        
     }
-    button:hover {
-        background-color: var(--color-main);
-        color: white;
+    .cart-info {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        color: #444;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 24px;
+        p {
+            &:hover {
+                color: #000;
+                transform:  scale(1.1);
+            }
+        }
     }
 }
-.drink-card img {
-    width: 90px;
-    height: 130px;
-    padding-top: 5px;
-}
+

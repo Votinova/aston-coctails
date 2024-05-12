@@ -36,12 +36,13 @@ nav li {
 
 nav a {
   color: #444;
+  display: block;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
   &:hover {
     color: #000;
-    font-size: 18px;
+    transform:  scale(1.1);
   }
 }
 

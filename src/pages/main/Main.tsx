@@ -1,5 +1,5 @@
 import React from 'react'
-import { Coctail } from '../../components/Coctail';
+import { Coctail } from '../../components/Coctail/Coctail';
 import { IDrink } from '../../types/typeContext';
 import { useGetAllCoctailQuery } from '../../store/servise/data';
 import'../../scss/Main.scss'

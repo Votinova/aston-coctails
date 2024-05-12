@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { IDrink } from '../../../types/typeContext'
-import { Coctail } from '../../../components/Coctail'
+import { Coctail } from '../../../components/Coctail/Coctail'
 import { useGetISLocalStore } from '../../../hooks/useGetISLocalStore'
 import { useAppSelector } from '../../../hooks/typescriptHooks/typescript'
 import { inUser } from '../../../hooks/inUser';

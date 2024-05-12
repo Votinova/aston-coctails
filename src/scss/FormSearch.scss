@@ -11,6 +11,9 @@
         color: #444;
         text-decoration: none;
         text-transform: uppercase;
+        &:hover {
+            transform:  scale(1.1);
+          }
     }
     button {
         border: none;
@@ -22,7 +25,8 @@
         text-transform: uppercase;
         &:hover {
             color: #000;
-            font-size: 18px;
+            transform:  scale(1.1);
+            cursor: pointer;
           }
     }
       

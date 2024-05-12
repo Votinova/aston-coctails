@@ -2,7 +2,7 @@ import React from 'react'
 import'../../scss/Search.scss';
 import {  useGetSearchQuery } from '../../store/servise/data';
 import { Loader } from '../../utilits/Loader/Loader';
-import { Coctail } from '../../components/Coctail';
+import { Coctail } from '../../components/Coctail/Coctail';
 import { typeResponse } from '../../types/typeContext';
 import { getSearch } from '../../localStorage/getSearch';
 import { inUser } from '../../hooks/inUser';
