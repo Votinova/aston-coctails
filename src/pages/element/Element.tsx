@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import '../../scss/element.scss';
 import { Cart } from '../../components/Cart';
 import { IElement } from '../../types/typeContext';
 import { useGetElementQuery } from '../../store/servise/data';
@@ -15,7 +14,7 @@ export const Element = () => {
   }, [])
   const id = getElementId()
 const {data, isLoading} = useGetElementQuery(id);
-
+console.log(data)
   return (
     <div>
       {isLoading?

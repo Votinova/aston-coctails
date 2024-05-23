@@ -21,7 +21,7 @@ export const Search = () => {
     : (
       <div className='drinks-card'>
     {data && data.map((drink: typeResponse) => {
-      return <Coctail key={drink.idDrink} id={drink.idDrink}/>
+      return <Coctail key={drink.idDrink} drink={drink}/>
     })}
    </div>): <h1> No coctails</h1>}
     </div>

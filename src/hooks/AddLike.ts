@@ -1,6 +1,6 @@
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import { db } from '../firebaseConfig';
-import { getLikes } from './getLikes';
+
 
 export const AddLike = async (email: string, id: number) => {
   await updateDoc (doc(db, 'users', email), {

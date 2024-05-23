@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import '../scss/ButtonLike.scss';
 import FillHeart from '../icons/suit-heart-fill.svg';
 import Heart from '../icons/suit-heart.svg';
+import { useLocalStorage } from '../hooks/useLocalStorage';
+import { IDrink } from '../types/typeContext';
 
 
 
-export const ButtonLike = (props: {data: number}) => {
-  const [state, setState] = useState(false);
+export const ButtonLike = (props: {data: IDrink}) => {
+  const data = useLocalStorage(props.data)
   function onClick () {
-    setState(!state)
-  }  
+  data.click()
+}
   return (
     <button className='btn-like' onClick={onClick}>
-      {state? <img src={FillHeart}/> : <img src={Heart}/>}
+      {data.isLike? <img src={FillHeart}/> : <img src={Heart}/>}
     </button>
   )
 }

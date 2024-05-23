@@ -14,7 +14,7 @@ export const NavbarMenu = (props: {isAuth: string}) => {
         <ul>
           <li><Link to='/'>Главная</Link></li>
           <li><Link to='/profile'>Профиль</Link></li>
-          <li><Link to='/auth'>{props.isAuth? 'Выход' : 'Авторизация'}</Link></li>
+          <li><Link to='/formlogin'>{props.isAuth? 'Выход' : 'Авторизация'}</Link></li>
         </ul>
       </nav>
     </div>

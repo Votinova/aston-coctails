@@ -7,29 +7,30 @@ import { ButtonLike } from '../ButtonLike'
 import ErroBoundary from '../../errorBoundary/errorBoundary';
 import { useGetElementQuery } from '../../store/servise/data';
 import '../../scss/Coctail.scss'
+import { IDrink } from '../../types/typeContext'
 
 
 
-export const Coctail = (props: {id: number}) => {
+export const Coctail = ( props: {drink: IDrink}) => {
 const dispatch = useDispatch();
 const isAuth = useAuth();
 
  function clickElement () {
   dispatch(setElement({
-    id: props.id
+    id: props.drink.idDrink
   }))
  }
- const {data} = useGetElementQuery(props.id);
+
   return (
     <div className='drink-card'>
-        <img src={data?.drinks?.[0].strDrinkThumb} title='image' alt='Image'/>
+        <img src={props.drink.strDrinkThumb} title='image' alt='Image'/>
         <div className='cart-info'>
-          <Link to={`/element/${data?.idDrink}`} className='link' onClick={ () => clickElement()}>
+          <Link to={`/element`} className='link' onClick={ () => clickElement()}>
             <p>
-            {data?.drinks?.[0].strDrink}
+            {props.drink.strDrink}
             </p>
           </Link>
-          {isAuth && <ButtonLike data={props.id} />}
+          {isAuth && <ButtonLike data={props.drink} />}
         </div>
     </div>
   )

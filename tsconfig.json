@@ -23,5 +23,5 @@
   "include": [
     "src",
     "declaration.d.ts"
-, "src/pages/cart/.tsx"  ]
+, "src/pages/element/.tsx"  ]
 }

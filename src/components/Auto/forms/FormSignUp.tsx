@@ -1,6 +1,8 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { useSignin } from '../../../hooks/useSignin';
+import { Link } from 'react-router-dom';
+import '../../../scss/Auth.scss'
 
 export const FormSignUp = () => {
 
@@ -16,8 +18,8 @@ export const FormSignUp = () => {
   });
   return (
     <form onSubmit={formik.handleSubmit} className='form-sign-up'>
-      <h1>You have accoun? Go</h1>
-      <label htmlFor="email">Email Address</label>
+      <p>У вас уже есть аккаунт? Войдите</p>
+      <label htmlFor="email">Email</label>
       <input
         id="email"
         name="email"
@@ -26,17 +28,18 @@ export const FormSignUp = () => {
         value={formik.values.email}
         placeholder='email'
       />
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password">Пароль</label>
        <input
          id="password"
          name="password"
          type="password"
          onChange={formik.handleChange}
          value={formik.values.password}
-         placeholder='password'
+         placeholder='пароль'
        />
 
-      <button type="submit">Sign in</button>
+      <button type="submit">Войти</button>
+      <p>У меня еще нет аккаунта. <Link to='/formlogin'>Зарегистрироваться</Link></p>
     </form>
   );
 }

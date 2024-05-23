@@ -7,7 +7,7 @@ import { Loader } from '../../utilits/Loader/Loader';
 import { inUser } from '../../hooks/inUser';
 
 export const Main = () => {
-  inUser()
+  // inUser()
 const {data, isLoading} = useGetAllCoctailQuery('');
   return (
     <div>
@@ -15,7 +15,7 @@ const {data, isLoading} = useGetAllCoctailQuery('');
     :
     <div className='drinks-card'>
     {data && data.drinks.map((drink: IDrink) => {
-      return<Coctail key={drink.idDrink} id={drink.idDrink} />
+      return <Coctail key={drink.idDrink} drink={drink} />
     })}
    </div>
     }
