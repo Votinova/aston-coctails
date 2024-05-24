@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../scss/ButtonLike.scss';
 import FillHeart from '../icons/suit-heart-fill.svg';
 import Heart from '../icons/suit-heart.svg';
-import { useLocalStorage } from '../hooks/useLocalStorage';
-import { IDrink } from '../types/typeContext';
+import { likeFirebase} from '../hooks/likeFirebase';
 
-
-
-export const ButtonLike = (props: {data: IDrink}) => {
-  const data = useLocalStorage(props.data)
+export const ButtonLike = (props: {id: number}) => {
+  const data = likeFirebase(props.id)
   function onClick () {
   data.click()
 }

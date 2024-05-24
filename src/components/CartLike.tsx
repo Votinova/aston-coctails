@@ -14,10 +14,10 @@ console.log(data)
     <div className='cart-info'>
       <Link to={`/element`} className='link'>
         <p>
-        {data?.drinks[0].strDrink}
+        {data?.drinks[0]?.strDrink}
         </p>
       </Link>
-      {/* {isAuth && <ButtonLike data={data?.drinks[0]?} />} */}
+      {isAuth && <ButtonLike id={props.id} />}
   </div>
 </div>
   )

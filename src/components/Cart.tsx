@@ -16,7 +16,7 @@ export const Cart = (props : {data: IElement}) => {
                 <h1 >
                     {props.data.strDrink}
                 </h1>
-                {isAuth && <ButtonLike data={props.data}/>}
+                {isAuth && <ButtonLike id={props.data.idDrink}/>}
                 <ul>
                     <Ingridients data={props.data}/>
                 </ul>

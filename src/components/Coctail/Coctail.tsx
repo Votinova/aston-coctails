@@ -30,7 +30,7 @@ const isAuth = useAuth();
             {props.drink.strDrink}
             </p>
           </Link>
-          {isAuth && <ButtonLike data={props.drink} />}
+          {isAuth && <ButtonLike id={props.drink.idDrink} />}
         </div>
     </div>
   )

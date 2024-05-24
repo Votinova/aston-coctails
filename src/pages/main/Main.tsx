@@ -14,7 +14,7 @@ const {data, isLoading} = useGetAllCoctailQuery('');
     {isLoading? <Loader / > 
     :
     <div className='drinks-card'>
-    {data && data.drinks.map((drink: IDrink) => {
+    {data && data?.drinks?.map((drink: IDrink) => {
       return <Coctail key={drink.idDrink} drink={drink} />
     })}
    </div>
