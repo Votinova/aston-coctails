@@ -1,4 +1,4 @@
-
+@import './text';
 .container-navbar {
 	width: 80%;
 	margin: 0 auto;
@@ -10,6 +10,7 @@
 .header-navbar {
   width: 100%;
   padding-bottom: 23px;
+  border-bottom:  1px solid black;
 }
 
 .header-navbar::after {
@@ -35,14 +36,10 @@ nav li {
 }
 
 nav a {
-  color: #444;
   display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 16px;
+  @extend %text-navbar;
   &:hover {
-    color: #000;
-    transform:  scale(1.1);
+    @extend %text-hover;
   }
 }
 

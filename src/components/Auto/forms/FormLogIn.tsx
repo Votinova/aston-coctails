@@ -6,7 +6,6 @@ import '../../../scss/Auth.scss'
 
 
 export const FormLogIn = () => {
-
   const handleSignUp = useLogin();
   const formik = useFormik({
     initialValues: {
@@ -18,8 +17,9 @@ export const FormLogIn = () => {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit} className='form-sign-up'>
-      <p>У вас нет аккаунта? Создайте его прямо сейчас</p>
+    <div>
+      <form onSubmit={formik.handleSubmit} className='form-sign-up'>
+      <p>У вас нет аккаунта?Создайте его прямо сейчас</p>
       <label htmlFor="email">Email</label>
       <input
         id="email"
@@ -39,7 +39,12 @@ export const FormLogIn = () => {
          placeholder='пароль'
        />
       <button type="submit">Зарегистрироваться</button>
-      <p>У меня уже есть аккаунт.<Link to='/formsignup' >Войти</Link></p>
     </form>
+    <div className='under-form'>
+      <p>У меня уже есть аккаунт.</p>
+      <button className='link'><Link to='/formsignup'>Войти</Link></button>
+    </div>
+    </div>
+
   );
 }

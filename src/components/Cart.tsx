@@ -1,5 +1,5 @@
 import React from 'react'
-import { IElement } from '../types/typeContext'
+import { IElement } from '../types/types'
 import { Ingridients } from './Ingridients';
 import { ButtonLike } from './ButtonLike';
 import { useAuth } from '../hooks/useAuth';

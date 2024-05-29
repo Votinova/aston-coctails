@@ -1,46 +1,56 @@
+@import './text';
+@import './vars';
 .form-sign-up {
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 40px;
     margin-top: 20px;
+    margin-bottom: 40px;
     justify-content: center;
     p {
-        color: #444;
-        text-decoration: none;
-        text-transform: uppercase;
+        @extend %text-navbar;
     }
     label {
-        color: #444;
-        text-decoration: none;
-        text-transform: uppercase;
+        @extend %text-navbar;
     }
     input {
         width: 350px;
         height: 50px;
-        background-color: white;
+        background-color: var(--color-main);
         border: none;
         padding-left: 10px;
         border-bottom: 1px solid black;
         outline: none;
-        color: #444;
-        text-decoration: none;
-        text-transform: uppercase;
+        @extend %text-navbar;
         &:hover {
-            color: #000;
-            transform:  scale(1.1);
+            @extend %text-hover;
           }
     }
     button {
-        color: #444;
+        @extend %text-navbar;
         text-decoration: none;
-        text-transform: uppercase;
-        background-color: white;
+        background-color: var(--color-main);
         border: none;
         cursor: pointer;
-        font-size: 16px;
         &:hover {
-          color: #000;
-          transform:  scale(1.1);
+            @extend %text-hover;
         }
     }
+    
+}
+.under-form {
+    display: grid;
+    justify-content: center;
+    @extend %text-navbar;
+    button {
+        @extend %text-navbar;
+        text-decoration: none;
+        background-color: var(--color-main);
+        border: none;
+        cursor: pointer;
+        &:hover {
+            @extend %text-hover;
+        }
+    }
+        
 }

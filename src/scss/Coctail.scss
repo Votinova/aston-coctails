@@ -1,3 +1,4 @@
+@import './text';
 .drink-card {
     position: relative;
     width: 700px;
@@ -5,21 +6,7 @@
     display: flex;
     flex-direction: row;
     gap: 30px;
-    // button {
-    //     background-color: white;
-    //     position: absolute;
-    //     bottom: 50px;
-    //     width: 100px;
-    //     height: 30px;
-    //     border-radius: 15px;
-    //     border: 2px solid var(--color-main);
-    //     color: var(--color-main);
-    //     cursor: pointer;
-    // }
-    // button:hover {
-    //     background-color: var(--color-main);
-    //     color: white;
-    // }
+    border-bottom: 1px solid black;;
     img {
         width: 300px;
         height: 300px;
@@ -29,14 +16,10 @@
         display: flex;
         flex-direction: column;
         max-width: 300px;
-        color: #444;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 24px;
+        @extend %text;
         p {
             &:hover {
-                color: #000;
-                transform:  scale(1.1);
+                @extend %text-hover;
             }
         }
     }

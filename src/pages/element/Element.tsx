@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react'
 import { Cart } from '../../components/Cart';
-import { IElement } from '../../types/typeContext';
+import { IElement } from '../../types/types';
 import { useGetElementQuery } from '../../store/servise/data';
-import { getElementId } from '../../localStorage/getElementId';
+
 import { Loader } from '../../utilits/Loader/Loader';
 import { inUser } from '../../hooks/inUser';
+import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
 
 
 export const Element = () => {
@@ -12,9 +13,8 @@ export const Element = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  const id = getElementId()
+const id = useAppSelector(state => state.element.id)
 const {data, isLoading} = useGetElementQuery(id);
-console.log(data)
   return (
     <div>
       {isLoading?

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { IThemeContext} from '../types/typeContext';
+import { IThemeContext} from '../types/types';
 
 const defaultState = {
     dark: false

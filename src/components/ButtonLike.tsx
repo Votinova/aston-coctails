@@ -8,10 +8,12 @@ export const ButtonLike = (props: {id: number}) => {
   const data = likeFirebase(props.id)
   function onClick () {
   data.click()
-}
+  }
   return (
-    <button className='btn-like' onClick={onClick}>
+    <div>
+      {data.isLike !== undefined? <button className='btn-like' onClick={onClick}>
       {data.isLike? <img src={FillHeart}/> : <img src={Heart}/>}
-    </button>
+      </button> : ''}
+    </div>
   )
 }

@@ -39,7 +39,7 @@ export const FormSignUp = () => {
        />
 
       <button type="submit">Войти</button>
-      <p>У меня еще нет аккаунта. <Link to='/formlogin'>Зарегистрироваться</Link></p>
+      <p>У меня еще нет аккаунта.<br /> <br /> <Link to='/formlogin' className='link'>Зарегистрироваться</Link></p>
     </form>
   );
 }

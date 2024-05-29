@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { transormResponseDrinks } from '../../types/typeContext';
+import { transormResponseDrinks } from '../../types/types';
 
 export const dataApi = createApi({
     reducerPath: "coctails",

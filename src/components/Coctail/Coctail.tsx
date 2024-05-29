@@ -7,7 +7,7 @@ import { ButtonLike } from '../ButtonLike'
 import ErroBoundary from '../../errorBoundary/errorBoundary';
 import { useGetElementQuery } from '../../store/servise/data';
 import '../../scss/Coctail.scss'
-import { IDrink } from '../../types/typeContext'
+import { IDrink } from '../../types/types'
 
 
 
