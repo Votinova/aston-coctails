@@ -1,5 +1,5 @@
 import React from 'react'
-import { IElement } from '../types/types'
+import { IElement } from '../../types/types'
 import { Ingridient } from './Ingridient'
 
 export const Ingridients = (props : {data: IElement}) => {

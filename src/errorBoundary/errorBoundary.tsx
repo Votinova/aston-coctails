@@ -8,7 +8,7 @@ interface Props {
 interface State {
   hasError: boolean;
 }
-class ErroBoundary extends React.Component<Props, State>{
+class ErrorBoundary extends React.Component<Props, State>{
    public state: State = {
     hasError: false
    }
@@ -28,4 +28,4 @@ class ErroBoundary extends React.Component<Props, State>{
 
 }
 
-export default ErroBoundary
+export default ErrorBoundary

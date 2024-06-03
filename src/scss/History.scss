@@ -1,0 +1,18 @@
+@import './text';
+@import './vars';
+
+.history-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: start;
+    margin-left: -40px;
+}
+.history-btn {
+    @extend %btn;
+    @extend %text-navbar;
+    &:hover {
+        @extend %text-hover;
+        border-bottom:  1px solid #000;
+    }
+}

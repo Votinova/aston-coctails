@@ -96,3 +96,10 @@ export interface typeResponse{
 export interface transormResponseDrinks {
     drinks: typeResponse[]
 }
+export interface paginationProps {
+    arrPages: number [],
+    page: number,
+    handlePageClick:() => void,
+    handleNextPage: () => void,
+    handlePrevPage: () => void
+}

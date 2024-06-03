@@ -1,3 +1,4 @@
+@import './vars';
 %text {
     color: #444;
     text-decoration: none;
@@ -9,6 +10,7 @@
     color: #000;
     transform:  scale(1.1);
     cursor: pointer;
+    transition: transform 1s 
 }
 %text-navbar {
     color: #444;
@@ -16,4 +18,8 @@
     text-transform: uppercase;
     font-size: 16px;
     text-decoration: none;
+}
+%btn {
+    border: none;
+    background-color: var(--color-main);
 }

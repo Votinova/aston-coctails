@@ -5,18 +5,18 @@ import { setSearch } from '../../store/slices/searchSlise';
 import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
 import '../../scss/FormSearch.scss';
 import { AddHistory } from '../../hooks/AddHistory';
-
+import { useSearch } from '../../hooks/useSearch';
 
 export const FormSearch = () => {
 const [searchText, setSearchText] =  useState('');
 const dispatch = useDispatch();
 const email = useAppSelector(state => state.user.email)
-
+const onSearch = useSearch(searchText);
 function searchSubmit (email: string, searchText: string) {
-    dispatch(setSearch({
-        search: searchText,
-    }))
-    AddHistory(email, searchText);
+    onSearch()
+    if (searchText) {
+        AddHistory(email, searchText);
+    }
 }
     return (
         <div className='form-search'>
@@ -27,7 +27,7 @@ function searchSubmit (email: string, searchText: string) {
             search: searchText,
         })
         )}}/>
-                <Link to='/search'>
+                <Link to={`/search/${searchText}`}>
                     <button type='submit' onClick={() => searchSubmit(email, searchText)}>Поиск</button>
                 </Link>
             </form>

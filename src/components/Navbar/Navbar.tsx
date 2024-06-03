@@ -1,10 +1,11 @@
 import React from 'react';
 import '../../scss/Navbar.scss'
 import { Link } from 'react-router-dom';
-import { FormSearch } from '../Links/FormSearch';
+import { FormSearch } from '../FormSearch/FormSearch';
+import { useAuth } from '../../hooks/useAuth';
 
-export const NavbarMenu = (props: {isAuth: string}) => {
-  
+export const Navbar = () => {
+  const isAuth = useAuth()
   return (
     <div className='navbar'>
       <header className='header-navbar'>
@@ -13,8 +14,8 @@ export const NavbarMenu = (props: {isAuth: string}) => {
       <nav>
         <ul>
           <li><Link to='/'>Главная</Link></li>
-          <li><Link to='/profile'>Профиль</Link></li>
-          <li><Link to='/formlogin'>{props.isAuth? 'Выход' : 'Авторизация'}</Link></li>
+          <li><Link to='/profile'>{isAuth? 'Профиль' : ''}</Link></li>
+          <li><Link to='/formlogin'>{isAuth? '' : 'Авторизация'}</Link></li>
         </ul>
       </nav>
     </div>

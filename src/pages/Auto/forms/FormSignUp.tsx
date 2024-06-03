@@ -17,6 +17,7 @@ export const FormSignUp = () => {
     },
   });
   return (
+    <div>
     <form onSubmit={formik.handleSubmit} className='form-sign-up'>
       <p>У вас уже есть аккаунт? Войдите</p>
       <label htmlFor="email">Email</label>
@@ -37,9 +38,12 @@ export const FormSignUp = () => {
          value={formik.values.password}
          placeholder='пароль'
        />
-
       <button type="submit">Войти</button>
-      <p>У меня еще нет аккаунта.<br /> <br /> <Link to='/formlogin' className='link'>Зарегистрироваться</Link></p>
     </form>
+    <div className='under-form'>
+    <p>У меня еще нет аккаунта.</p>
+    <button className='link'><Link to='/formsignup'>Зарегистрироваться</Link></button>
+      </div>
+      </div>
   );
 }

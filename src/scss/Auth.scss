@@ -16,21 +16,19 @@
     input {
         width: 350px;
         height: 50px;
-        background-color: var(--color-main);
-        border: none;
+        @extend %btn;
         padding-left: 10px;
         border-bottom: 1px solid black;
         outline: none;
         @extend %text-navbar;
         &:hover {
             @extend %text-hover;
+            border-bottom:  2px solid #000;
           }
     }
     button {
         @extend %text-navbar;
-        text-decoration: none;
-        background-color: var(--color-main);
-        border: none;
+        @extend %btn;
         cursor: pointer;
         &:hover {
             @extend %text-hover;
@@ -40,16 +38,19 @@
 }
 .under-form {
     display: grid;
+    width: 100%;
     justify-content: center;
     @extend %text-navbar;
+    gap: 50px;
     button {
         @extend %text-navbar;
-        text-decoration: none;
-        background-color: var(--color-main);
-        border: none;
+        @extend %btn;
         cursor: pointer;
+        width: 100%;
+        border-bottom: 1px solid black;
         &:hover {
             @extend %text-hover;
+            border-bottom: 2px solid black;
         }
     }
         

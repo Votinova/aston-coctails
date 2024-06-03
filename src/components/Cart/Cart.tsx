@@ -1,9 +1,9 @@
-import React from 'react'
-import { IElement } from '../types/types'
-import { Ingridients } from './Ingridients';
-import { ButtonLike } from './ButtonLike';
-import { useAuth } from '../hooks/useAuth';
-import '../scss/Cart.scss'
+import React from 'react';
+import { IElement } from '../../types/types';
+import { Ingridients } from '../Ingridients/Ingridients';
+import { ButtonLike } from '../ButtonLike/ButtonLike';
+import '../../scss/Cart.scss'
+import { useAuth } from '../../hooks/useAuth';
 
 
 export const Cart = (props : {data: IElement}) => {

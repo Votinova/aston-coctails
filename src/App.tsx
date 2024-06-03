@@ -1,21 +1,17 @@
 import React, { Suspense} from 'react';
-
-import { ThemeContextProvider } from './context/context';
 import { inUser } from './hooks/inUser';
-import { Header } from './components/Header';
 import { RootRouter } from './Route/Route';
+import { Navbar } from './components/Navbar/Navbar';
 
 
 function App() {
   inUser()
   return (
    <div>
-        <ThemeContextProvider>
         <Suspense fallback={<div>Loading...</div>}>
-          <Header />
+          <Navbar />
           <RootRouter />
           </Suspense>
-        </ThemeContextProvider>
    </div>
   );
 }

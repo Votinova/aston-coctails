@@ -1,5 +1,4 @@
 
-import { useAppSelector } from '../../hooks/typescriptHooks/typescript';
 import { RootState } from '../store'
 import { Middleware } from 'redux'
 

@@ -12,7 +12,7 @@ const dispatch =  useAppDispatch()
           id: user?.uid,
         }))
 }})
-  return 
+  return auth
 }
 
 

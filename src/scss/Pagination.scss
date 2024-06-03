@@ -1,0 +1,24 @@
+@import './text';
+@import './vars';
+.pagination {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    @extend %text-navbar;
+    button {
+        @extend %text;
+        @extend %btn;
+        &:hover{
+            @extend %text-hover;
+        }
+    }
+    .numbers {
+        padding: 20px 30px;
+        &:hover {
+            @extend %text-hover;
+            background-color: var(--color-hover);
+        }
+    }
+
+}

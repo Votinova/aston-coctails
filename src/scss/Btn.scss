@@ -1,4 +1,5 @@
 @import './vars';
+@import './text';
 .btn-like {
     transform: scale(0.1);
     background-color: var(--color-main);
@@ -7,5 +8,12 @@
         &:hover {
             transform: scale(1.2);
         }
+    }
+}
+.btn {
+    @extend %btn;
+    @extend %text;
+    &:hover {
+        @extend %text-hover;
     }
 }
