@@ -2,6 +2,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useAppDispatch} from "./typescriptHooks/typescript";
 import { setUser } from "../store/slices/userSlice";
 
+
 export  function inUser () {
 const dispatch =  useAppDispatch()
     const auth = getAuth();
@@ -12,7 +13,6 @@ const dispatch =  useAppDispatch()
           id: user?.uid,
         }))
 }})
-  return auth
+const user = auth.currentUser;
+return user?.email
 }
-
-

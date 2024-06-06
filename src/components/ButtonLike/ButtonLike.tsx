@@ -5,12 +5,12 @@ import Heart from '../../icons/suit-heart.svg';
 import { likeFirebase } from '../../hooks/likeFirebase';
 
 export const ButtonLike = (props: {id: number}) => {
-  const data = likeFirebase(props.id)
+  const data = likeFirebase(props.id);
   return (
     <div>
       {data.isLike !== undefined? <button className='btn-like' onClick={() => data.click()}>
       {data.isLike? <img src={FillHeart}/> : <img src={Heart}/>}
-      </button> : ''}
+      </button> : <p>...</p>}
     </div>
   )
 }

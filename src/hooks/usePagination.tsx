@@ -1,10 +1,11 @@
 import React, {useState} from "react";
-export const usePagination = (total: number) =>  {
+export const usePagination = (total: number | undefined, pages: number) =>  {
     const [page, setPage] = useState(1);
     const arrPages: number [] = [];
-    const pages = 5;
-    for (let i = 0; i < (Math.ceil(total / pages)); i++) {
+    if(total) {
+      for (let i = 0; i < (Math.ceil(total / pages)); i++) {
         arrPages.push(i + 1);
+    }
     }
     const handlePageClick = (page: number) => {
       setPage(page)
@@ -19,5 +20,5 @@ export const usePagination = (total: number) =>  {
           setPage(page - 1)
       }
     }
-    return {arrPages, pages, page, handleNextPage, handlePageClick, handlePrevPage}
+    return {arrPages, page, handleNextPage, handlePageClick, handlePrevPage}
 }

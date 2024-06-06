@@ -7,13 +7,15 @@ import { DeleteLike } from './DeleteLike';
 
 export const likeFirebase = (id: number) => {
   const user = useAppSelector(state => state.user.email);
-  const {data} = useFetchLikesQuery(user);
+  const {data, refetch } = useFetchLikesQuery(user);
   const [isLike, setIsLike] = useState<number>();
   useEffect(() => {
-      setIsLike(data?.some((like: number) => like === id))
-  }, [data])
+      setIsLike(data?.some((like: number) => like === id));
+      refetch()
+  })
  const click = () => {
-    (!isLike) ? AddLike(user, id) : DeleteLike(user, id)
+    (!isLike) ? AddLike(user, id) : DeleteLike(user, id);
+    refetch()
  }
    return {isLike, click}
 }

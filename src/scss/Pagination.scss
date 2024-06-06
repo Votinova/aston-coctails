@@ -13,12 +13,15 @@
             @extend %text-hover;
         }
     }
-    .numbers {
+    .number {
         padding: 20px 30px;
         &:hover {
             @extend %text-hover;
             background-color: var(--color-hover);
         }
     }
-
+    .check {
+        padding: 20px 30px;
+        background-color: var(--color-hover);
+    }
 }
